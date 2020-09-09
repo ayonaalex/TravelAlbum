@@ -1,65 +1,89 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Layout from '../components/Layout';
+import React, { Component } from 'react';
+import Fetch from 'isomorphic-unfetch';
+import HeadLayout from '../components/Layout';
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+class Index extends Component {
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+  //data for the main page
+  profiles = [
+    {
+      userId: 1,
+      userName: "aara",
+      userImage: "/prf1.png",
+      coverImage: "/img1.jpg",
+      title: "Nilaweli Beach",
+      place: "Srilnka",
+      description: "Space Black Stainless Steel Case with Black Sport Band",
+      likes: 300,
+      tags: "#sunset #blue #cream #river",
+    },
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+    {
+      userId: 2,
+      userName: "rodney",
+      userImage: "/prf2.jpg",
+      coverImage: "/img2.jpg",
+      title: "maldiwes",
+      place: "Norway",
+      description: "Space Black Stainless Steel Case with Black Sport Band",
+      likes: 400,
+      tags: "#sunset #green #cream #river",
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+    },
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+  ]
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+
+  //function for adding favorite images using post method
+  handlefav = async (prf) => {
+
+    let data =
+    {
+      userId: prf.userId,
+      userName: prf.userName,
+      userImage: prf.userImage,
+      coverImage: prf.coverImage,
+      title: prf.title,
+      place: prf.place,
+      description: prf.description,
+      likes: prf.likes,
+      tags: prf.tags,
+    }
+
+
+    Fetch('http://localhost:3000/api/notes', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(
+        data)
+    })
+
+
+  }
+
+
+  render() {
+    return (
+      <div>
+        <Layout
+          profiles={this.profiles}
+          handlefav={this.handlefav} />
+      </div>
+
+    );
+  }
 }
+
+
+
+export default Index;
+
+
+
+
