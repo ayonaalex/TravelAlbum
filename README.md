@@ -21,5 +21,6 @@
   ### WEB HOME PAGE  
   ![web UI](https://github.com/ayonaalex/travelAlbum/blob/master/public/webUI.png)
 
-
+  ### APP HOME PAGE 
   
+  ![web UI](https://github.com/ayonaalex/travelAlbum/blob/master/public/AppUI.png)
