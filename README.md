@@ -23,4 +23,4 @@
 
   ### APP HOME PAGE 
   
-  ![web UI](https://github.com/ayonaalex/travelAlbum/blob/master/public/AppUI.png)
+  ![web UI](https://github.com/ayonaalex/travelAlbum/blob/master/public/AppUl.png)
