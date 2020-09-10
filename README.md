@@ -28,3 +28,4 @@
 
 ## How the application Works
 
+  ![web UI](https://github.com/ayonaalex/travelAlbum/blob/master/public/How_it_works.png)
