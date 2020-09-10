@@ -1,6 +1,7 @@
    - Indroduction 
    - UI Screent Shots 
-
+   - How the application Works
+   
 
 
 
@@ -24,3 +25,6 @@
   ### APP HOME PAGE 
   
   ![web UI](https://github.com/ayonaalex/travelAlbum/blob/master/public/AppUI.png)
+
+## How the application Works
+
