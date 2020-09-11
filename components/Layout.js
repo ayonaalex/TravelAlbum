@@ -5,6 +5,21 @@ import React, { Component } from "react";
 import useWindowSize from "./ScreenSize"
 
 
+const EmptyImgBox = styled.h1`
+border-radius: 3px;
+font-family: 'PT Sans', sans-serif;
+font-weight: bold;
+font-size:  10px;  
+margin-top: 150px;
+margin-right: 20%;
+margin-left : 38%;
+
+@media (max-width: 425px) {
+  font-size: 9px;
+  margin-right: 20%;
+  margin-left : 28%;
+}
+`
 
 
 const MainBox = styled.div`
@@ -226,17 +241,17 @@ const Layout = (props) => {
 
           <div>
             <Navbar />
-            <MainBox>
-              <p>Oopss you dont have any favorite images!!!!</p>
-            </MainBox>
+            <EmptyImgBox>
+               <h1>Sorry you don't have any favorite images!!!! </h1>
+            </EmptyImgBox>
 
           </div>
         ) :
           (
             <div>
-              <MainBox>
-                <p>Oopss you dont have any favorite images!!!!</p>
-              </MainBox>
+            <EmptyImgBox>
+               <h1>Sorry you don't have any favorite images!!!! </h1>
+            </EmptyImgBox>
               <MobileNav />
             </div>
           )
